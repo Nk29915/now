@@ -1,0 +1,41 @@
+﻿<Window x:Class="_3121Sr.Windows_.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_3121Sr.Windows_"
+        mc:Ignorable="d"
+        Title="Menu" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="223"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Задачи на сегодня" HorizontalAlignment="Left" Margin="1 4" Click="Button_Click"/>
+            <Button Content="Все задачи" HorizontalAlignment="Left" Margin="1 4" Click="Button_Click_1"/>
+            <Button Content="Добавить задачу" HorizontalAlignment="Left" Margin="1 4" Click="Button_Click_2"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <DataGrid Height="360" Name="DG" AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Номер" Binding="{Binding Id}"/>
+                    <DataGridTextColumn Header="Задача" Binding="{Binding Taks}"/>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat=dd/MM/yyyy}"/>
+                    <DataGridTextColumn Header="Выполнена" Binding="{Binding Status}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Width="120" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="5" Content="Правка" Click="Button_Click_3"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Image Source="/Images_/user.png" Width="100"/>
+            <TextBlock Name="Tb_name" Margin="5" TextAlignment="Center"/>
+            <TextBlock Text="Сегодня" TextAlignment="Center" FontSize="27" FontWeight="Bold" Margin="0 20"/>
+            <DatePicker Name="DP" Margin="0 -10" Width="120" IsEnabled="False"/>
+        </StackPanel>
+    </Grid>
+</Window>

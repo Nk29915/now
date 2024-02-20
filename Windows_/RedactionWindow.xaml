@@ -1,0 +1,23 @@
+﻿<Window x:Class="_3121Sr.Windows_.RedactionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_3121Sr.Windows_"
+        mc:Ignorable="d"
+        Title="RedactionWindow" Height="250" Width="300">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Task" TextAlignment="Center" Margin="5"/>
+            <TextBox Width="150" Text="{Binding Taks}" Name="TbTask"/>
+            <TextBlock Text="Date" TextAlignment="Center" Margin="5"/>
+            <DatePicker Name="DP2" Width="150" SelectedDate="{Binding Date}" />
+            <TextBlock Text="Status" TextAlignment="Center" Margin="5" />
+            <ComboBox Name="TbStat" Width="150" Text="{Binding Status}" SelectedIndex="1">
+                <ComboBoxItem>True</ComboBoxItem>
+                <ComboBoxItem>False</ComboBoxItem>
+            </ComboBox>
+            <Button Name="Added" Width="150" Height="20" HorizontalAlignment="Center" Content="Added" Margin="20" Click="Added_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
